@@ -2,14 +2,14 @@ import Page from "../main/page-template";
 
 class PicturesPage extends Page {
     static TextObject = {
-        PicturesTitle: "Pictures",
+        MainTitle: "PicturesPage",
     };
 
     constructor(id: string) {
-        super(id);      
+        super(id);
     }
     render() {
-        const title = this.createHeaderTitle(PicturesPage.TextObject.PicturesTitle)
+        const title = this.createHeaderTitle(PicturesPage.TextObject.MainTitle)
         this.container.append(title);
         return this.container;
     }

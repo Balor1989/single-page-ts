@@ -2,7 +2,7 @@ import Page from "../main/page-template";
 
 class VideosPage extends Page {
     static TextObject = {
-        VideosTitle: "Videos",
+        MainTitle: "VideosPage",
     };
 
     constructor(id: string) {
@@ -10,7 +10,7 @@ class VideosPage extends Page {
     }
 
     render() {
-        const title = this.createHeaderTitle(VideosPage.TextObject.VideosTitle);
+        const title = this.createHeaderTitle(VideosPage.TextObject.MainTitle);
         this.container.append(title);
         return this.container;
     }

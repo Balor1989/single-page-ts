@@ -6,7 +6,7 @@ class MainPage extends Page {
     };
 
     constructor(id: string) {
-        super(id);
+        super('main-page');
         
     }
     render() {
