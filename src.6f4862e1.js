@@ -5,4 +5,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"QCba":[function(require,module,exports) {
 "use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};Object.defineProperty(exports,"__esModule",{value:!0}),require("./sass/main.scss");const s=e(require("./pages/app")),t=new s.default;t.run();
 },{"./sass/main.scss":"clu1","./pages/app":"kClI"}]},{},["QCba"], null)
-//# sourceMappingURL=/parcel-project-template/src.e3ef36be.js.map
+//# sourceMappingURL=/parcel-project-template/src.6f4862e1.js.map
