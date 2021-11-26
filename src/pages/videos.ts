@@ -2,11 +2,12 @@ import Page from "../main/page-template";
 
 class VideosPage extends Page {
     static TextObject = {
-        MainTitle: "VideosPage",
+        MainTitle: "Videos Page",
     };
 
     constructor(id: string) {
         super(id);
+        
     }
 
     render() {

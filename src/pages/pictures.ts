@@ -2,7 +2,7 @@ import Page from "../main/page-template";
 
 class PicturesPage extends Page {
     static TextObject = {
-        MainTitle: "PicturesPage",
+        MainTitle: "Pictures Page",
     };
 
     constructor(id: string) {
