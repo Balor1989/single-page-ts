@@ -1,11 +1,12 @@
 import Page from "../main/page-template";
 
+
 class ErrorPage extends Page {
 
     private errorType: string;
 
 static TextObject: {[prop: string]: string} = {
-        '404': "Error! Page is not found",
+        '404': "Error! Page was not found",
     };
 
     constructor(id: string, errotType: string) {
