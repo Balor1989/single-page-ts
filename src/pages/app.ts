@@ -14,9 +14,13 @@ class App {
 
     private static container: HTMLElement = document.body;
     private header: Header;
+    private static defaultPageID: string = 'current-page';
  
     static renderNewPage(idPage: string) {
-        this.container.innerHTML = '';
+        const.currentPageHTML = document.querySelector(`#${App.defaultPageID}`)
+        if (currentPageHTML) {
+            currentPageHTML.remove();
+        }
         let page: Page | null = null;
 
         if (idPage === PageNames.MainPage) {
@@ -31,6 +35,7 @@ class App {
         
         if (page) {
             const pageHTML = page.render();
+            pageHTML.id = this.defaultPageID;
             this.container.append(pageHTML);
         };
     }
@@ -41,13 +46,15 @@ class App {
         });
     }
     constructor() {
-        App.renderNewPage(PageNames.MainPage)
         this.header = new Header('header', 'header')
-        document.body.append(this.header.render())
+        
+        
     }
     
     run() {
+        App.container.append(this.header.render())
         this.enableRouteChange();
+        App.renderNewPage(PageNames.MainPage)
     }
 
 }
