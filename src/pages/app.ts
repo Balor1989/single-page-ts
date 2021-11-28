@@ -3,6 +3,7 @@ import MainPage from './main';
 import PicturesPage from './pictures';
 import VideosPage from './videos';
 import Header from './header';
+import ErrorPage from './error';
 
 const enum PageNames {
     MainPage = 'main-page',
@@ -17,27 +18,33 @@ class App {
     private static defaultPageID: string = 'current-page';
  
     static renderNewPage(idPage: string) {
-        const.currentPageHTML = document.querySelector(`#${App.defaultPageID}`)
+        const currentPageHTML = document.querySelector(`#${App.defaultPageID}`)
         if (currentPageHTML) {
             currentPageHTML.remove();
         }
         let page: Page | null = null;
 
-        if (idPage === PageNames.MainPage) {
-            page = new MainPage(idPage)
-        };
-        if (idPage === PageNames.PicturesPage) {
-            page = new PicturesPage(idPage)
-        };
-        if (idPage === PageNames.VideosPage) {
-            page = new VideosPage(idPage)
-        };
+
+        switch (idPage) {
+            case PageNames.MainPage:
+                page = new MainPage(idPage)
+                break
+            case PageNames.PicturesPage:
+                page = new PicturesPage(idPage)
+                break
+            case PageNames.VideosPage:
+                page = new VideosPage(idPage)
+                break
+            default:
+                page = new ErrorPage(idPage, '404');
+        }
         
         if (page) {
             const pageHTML = page.render();
             pageHTML.id = this.defaultPageID;
             this.container.append(pageHTML);
         };
+        
     }
     private enableRouteChange() {
         window.addEventListener('hashchange', () => {
@@ -54,7 +61,7 @@ class App {
     run() {
         App.container.append(this.header.render())
         this.enableRouteChange();
-        App.renderNewPage(PageNames.MainPage)
+        App.renderNewPage(PageNames.MainPage) 
     }
 
 }
