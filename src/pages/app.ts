@@ -1,28 +1,38 @@
-import Page from '../main/page-template'
+import Page from '../main/page-template';
 import MainPage from './main';
 import PicturesPage from './pictures';
 import VideosPage from './videos';
+import Header from './header';
+
+const enum PageNames {
+    MainPage = 'main-page',
+    PicturesPage = 'pictures-page',
+    VideosPage = 'videos-page'
+};
 
 class App {
+
+    private static container: HTMLElement = document.body;
+    private header: Header;
  
     static renderNewPage(idPage: string) {
-        document.body.innerHTML = '';
+        this.container.innerHTML = '';
         let page: Page | null = null;
 
-        if (idPage === 'main-page') {
+        if (idPage === PageNames.MainPage) {
             page = new MainPage(idPage)
-        }
-        if (idPage === 'pictures-page') {
+        };
+        if (idPage === PageNames.PicturesPage) {
             page = new PicturesPage(idPage)
-        }
-        if (idPage === 'videos-page') {
+        };
+        if (idPage === PageNames.VideosPage) {
             page = new VideosPage(idPage)
-        }
+        };
         
         if (page) {
             const pageHTML = page.render();
-            document.body.append(pageHTML);
-        }
+            this.container.append(pageHTML);
+        };
     }
     private enableRouteChange() {
         window.addEventListener('hashchange', () => {
@@ -30,13 +40,17 @@ class App {
             App.renderNewPage(hash)
         });
     }
-    constructor() { }
+    constructor() {
+        App.renderNewPage(PageNames.MainPage)
+        this.header = new Header('header', 'header')
+        document.body.append(this.header.render())
+    }
     
     run() {
-        App.renderNewPage('videos-page')
         this.enableRouteChange();
     }
 
 }
 
 export default App;
+
