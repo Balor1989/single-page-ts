@@ -1,14 +1,18 @@
 import Page from '../main/page-template';
 import MainPage from './main';
 import PicturesPage from './pictures';
-import VideosPage from './videos';
+import MusicPage from './music';
+import VideoPage from './video';
+import WeatherPage from './weather';
 import Header from './header';
 import ErrorPage from './error';
 
 const enum PageNames {
     MainPage = 'main-page',
     PicturesPage = 'pictures-page',
-    VideosPage = 'videos-page'
+    VideoPage = 'video-page',
+    MusicPage = 'music-page',
+    WeatherPage = 'weather-page'
 };
 
 class App {
@@ -32,8 +36,14 @@ class App {
             case PageNames.PicturesPage:
                 page = new PicturesPage(idPage)
                 break
-            case PageNames.VideosPage:
-                page = new VideosPage(idPage)
+            case PageNames.MusicPage:
+                page = new MusicPage(idPage)
+                break
+            case PageNames.WeatherPage:
+                page = new WeatherPage(idPage)
+                break
+            case PageNames.VideoPage:
+                page = new VideoPage(idPage)
                 break
             default:
                 page = new ErrorPage(idPage, '404');

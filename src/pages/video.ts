@@ -1,8 +1,8 @@
 import Page from "../main/page-template";
 
-class VideosPage extends Page {
+class VideoPage extends Page {
     static TextObject = {
-        MainTitle: "Videos Page",
+        MainTitle: "Video Page",
     };
 
     constructor(id: string) {
@@ -11,9 +11,9 @@ class VideosPage extends Page {
     }
 
     render() {
-        const title = this.createHeaderTitle(VideosPage.TextObject.MainTitle);
+        const title = this.createHeaderTitle(VideoPage.TextObject.MainTitle);
         this.container.append(title);
         return this.container;
     }
 }
-export default VideosPage;
+export default VideoPage;

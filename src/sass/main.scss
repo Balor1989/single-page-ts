@@ -1,6 +1,21 @@
 body {
   background-image: url(../images/square-2721757.png);
-  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: top;
+}
+div {
+  display: flex;
+  justify-content: space-around;
+}
+a {
+  text-decoration: none;
+  color: darkslategrey;
+  font-weight: 700;
+}
+.hero-title {
+  font-size: 49px;
+  font-weight: 900;
+  margin: 0;
+  padding-top: 100px;
+  text-align: center;
 }

@@ -10,8 +10,16 @@ const Buttons = [
     text: 'Pictures Page'
   },
   {
-    id: 'videos-page',
-    text: 'Videos Page'
+    id: 'video-page',
+    text: 'Video Page'
+    },
+  {
+    id: 'music-page',
+    text: 'Music Page'
+  },
+  {
+    id: 'weather-page',
+    text: 'Weather Page'
   }
 ];
 
