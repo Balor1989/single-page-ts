@@ -10,7 +10,9 @@ class MusicPage extends Page {
     }
     render() {
         const title = this.createHeaderTitle(MusicPage.TextObject.MainTitle)
-        this.container.append(title);
+        const mainBox = this.createHTMLElement('div')
+        this.container.append(title)
+        this.container.insertAdjacentElement("beforeend", mainBox)
         return this.container;
     }
 }

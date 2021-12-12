@@ -3,7 +3,7 @@ import MainPage from './main';
 import PicturesPage from './pictures';
 import MusicPage from './music';
 import VideoPage from './video';
-import WeatherPage from './weather';
+import ToDoPage from './to-do';
 import Header from './header';
 import ErrorPage from './error';
 
@@ -12,7 +12,7 @@ const enum PageNames {
     PicturesPage = 'pictures-page',
     VideoPage = 'video-page',
     MusicPage = 'music-page',
-    WeatherPage = 'weather-page'
+    ToDoPage = 'todo-page'
 };
 
 class App {
@@ -39,8 +39,8 @@ class App {
             case PageNames.MusicPage:
                 page = new MusicPage(idPage)
                 break
-            case PageNames.WeatherPage:
-                page = new WeatherPage(idPage)
+            case PageNames.ToDoPage:
+                page = new ToDoPage(idPage)  
                 break
             case PageNames.VideoPage:
                 page = new VideoPage(idPage)

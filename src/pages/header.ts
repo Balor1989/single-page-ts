@@ -18,8 +18,8 @@ const Buttons = [
     text: 'Music Page'
   },
   {
-    id: 'weather-page',
-    text: 'Weather Page'
+    id: 'todo-page',
+    text: 'Todo Page'
   }
 ];
 
@@ -29,7 +29,7 @@ class Header extends Component {
   }
 
   renderPageButtons() {
-    const pageButtons = document.createElement('div');
+    const pageButtons = document.createElement('nav');
     Buttons.forEach((button) => {
       const buttonHTML = document.createElement('a');
       buttonHTML.href = `#${button.id}`;

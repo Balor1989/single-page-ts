@@ -14,6 +14,11 @@ abstract class Page {
         headerTitle.innerText = text;
         return headerTitle;
     }
+    protected createHTMLElement(text: string) {
+        const mainBox = document.createElement('div');
+        mainBox.classList.add('main-box')
+        return mainBox;
+    }
     render() {
         return this.container;
     }

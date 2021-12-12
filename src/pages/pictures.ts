@@ -10,7 +10,10 @@ class PicturesPage extends Page {
     }
     render() {
         const title = this.createHeaderTitle(PicturesPage.TextObject.MainTitle)
-        this.container.append(title);
+        const mainBox = this.createHTMLElement('div')
+        mainBox.classList.add('main-box')
+        this.container.append(title)
+        this.container.insertAdjacentElement("beforeend", mainBox)
         return this.container;
     }
 }
